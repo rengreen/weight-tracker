@@ -1,4 +1,4 @@
-package main.java.tracker.model;
+package pl.rengreen.tracker.model;
 
 import java.math.BigDecimal;
 

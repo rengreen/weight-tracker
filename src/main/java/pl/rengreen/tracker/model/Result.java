@@ -1,4 +1,4 @@
-package main.java.tracker.model;
+package pl.rengreen.tracker.model;
 
 public class Result {
     private Long resultId;
