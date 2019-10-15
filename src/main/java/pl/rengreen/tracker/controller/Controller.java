@@ -39,7 +39,7 @@ public class Controller {
         LocalDate today = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
-        User user=new User(1L, "Anna", new BigDecimal("169.0"));
+        User user=new User(1L, "Anna", new BigDecimal("1.69"));
         List<Result> results =  Arrays.asList(
                 new Result(1L, today.minusDays(112), new BigDecimal("71.0"), user),
                 new Result(2L, today.minusDays(105), new BigDecimal("71.0"), user),
