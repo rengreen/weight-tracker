@@ -41,7 +41,7 @@ public class Controller {
 
         User user=new User(1L, "Anna", new BigDecimal("1.69"));
         List<Result> results =  Arrays.asList(
-                new Result(1L, today.minusDays(112), new BigDecimal("71.0"), user),
+                new Result(1L, today.minusDays(112), new BigDecimal("72.0"), user),
                 new Result(2L, today.minusDays(105), new BigDecimal("71.0"), user),
                 new Result(3L, today.minusDays(98), new BigDecimal("70.5"), user),
                 new Result(4L, today.minusDays(91), new BigDecimal("69.5"), user),
@@ -56,7 +56,7 @@ public class Controller {
                 new Result(13L, today.minusDays(28), new BigDecimal("67.0"), user),
                 new Result(14L, today.minusDays(21), new BigDecimal("66.5"), user),
                 new Result(15L, today.minusDays(14), new BigDecimal("66.5"), user),
-                new Result(16L, today.minusDays(7), new BigDecimal("66.0"), user)
+                new Result(16L, today.minusDays(7), new BigDecimal("52.0"), user)
         );
 
         Collections.reverse(results);
