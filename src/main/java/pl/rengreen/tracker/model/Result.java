@@ -1,6 +1,7 @@
 package pl.rengreen.tracker.model;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
 import java.time.LocalDate;
 
 public class Result {
@@ -46,8 +47,10 @@ public class Result {
     }
 
     public BigDecimal getBmi(){
-        //TODO obliczenie BMI
-        return BigDecimal.ZERO;
+        //obliczenie BMI
+        return this.weight
+                .divide(this.user.getHeight(), new MathContext(4))
+                .divide(this.user.getHeight(), new MathContext(4));
     }
 
     public void setBmi(BigDecimal bmi) {
@@ -55,8 +58,17 @@ public class Result {
     }
 
     public String getComment(){
-        //TODO komentarz dotyczący BMI (prawidłowe, za dużo, za mało)
-        return "komentarz";
+        //komentarz dotyczący BMI (prawidłowe, za dużo, za mało)
+        BigDecimal underweightValue = new BigDecimal(18.5);
+        BigDecimal overweightValue = new BigDecimal(25);
+
+        if (this.getBmi().compareTo(underweightValue)<0){
+            return "niedowaga";
+        } else if (this.getBmi().compareTo(overweightValue)<0){
+            return "ok";
+        } else {
+            return "nadwaga";
+        }
     }
 
     public void setComment(String comment) {
