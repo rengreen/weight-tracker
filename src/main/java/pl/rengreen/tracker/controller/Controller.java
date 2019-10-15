@@ -22,10 +22,10 @@ public class Controller {
     private TableView<Result> table_weight;
 
     @FXML
-    private TableColumn<Result, String> c_date;
+    private TableColumn<Result, LocalDate> c_date;
 
     @FXML
-    private TableColumn<Result, String> c_weight;
+    private TableColumn<Result, BigDecimal> c_weight;
 
     @FXML
     private TableColumn<Result, String> c_bmi;
@@ -41,22 +41,22 @@ public class Controller {
 
         User user=new User(1L, "Anna", new BigDecimal("169.0"));
         List<Result> results =  Arrays.asList(
-                new Result(1L, today.minusDays(112).format(formatter), "71.0", user),
-                new Result(2L, today.minusDays(105).format(formatter), "71.0", user),
-                new Result(3L, today.minusDays(98).format(formatter), "70.5", user),
-                new Result(4L, today.minusDays(91).format(formatter), "69.5", user),
-                new Result(5L, today.minusDays(84).format(formatter), "69.0", user),
-                new Result(6L, today.minusDays(77).format(formatter), "70.0", user),
-                new Result(7L, today.minusDays(70).format(formatter), "69.0", user),
-                new Result(8L, today.minusDays(63).format(formatter), "69.5", user),
-                new Result(9L, today.minusDays(56).format(formatter), "69.0", user),
-                new Result(10L, today.minusDays(49).format(formatter), "68.5", user),
-                new Result(11L, today.minusDays(42).format(formatter), "67.5", user),
-                new Result(12L, today.minusDays(35).format(formatter), "68.0", user),
-                new Result(13L, today.minusDays(28).format(formatter), "67.0", user),
-                new Result(14L, today.minusDays(21).format(formatter), "66.5", user),
-                new Result(15L, today.minusDays(14).format(formatter), "66.5", user),
-                new Result(16L, today.minusDays(7).format(formatter), "66.0", user)
+                new Result(1L, today.minusDays(112), new BigDecimal("71.0"), user),
+                new Result(2L, today.minusDays(105), new BigDecimal("71.0"), user),
+                new Result(3L, today.minusDays(98), new BigDecimal("70.5"), user),
+                new Result(4L, today.minusDays(91), new BigDecimal("69.5"), user),
+                new Result(5L, today.minusDays(84), new BigDecimal("69.0"), user),
+                new Result(6L, today.minusDays(77), new BigDecimal("70.0"), user),
+                new Result(7L, today.minusDays(70), new BigDecimal("69.0"), user),
+                new Result(8L, today.minusDays(63), new BigDecimal("69.5"), user),
+                new Result(9L, today.minusDays(56), new BigDecimal("69.0"), user),
+                new Result(10L, today.minusDays(49), new BigDecimal("68.5"), user),
+                new Result(11L, today.minusDays(42), new BigDecimal("67.5"), user),
+                new Result(12L, today.minusDays(35), new BigDecimal("68.0"), user),
+                new Result(13L, today.minusDays(28), new BigDecimal("67.0"), user),
+                new Result(14L, today.minusDays(21), new BigDecimal("66.5"), user),
+                new Result(15L, today.minusDays(14), new BigDecimal("66.5"), user),
+                new Result(16L, today.minusDays(7), new BigDecimal("66.0"), user)
         );
 
         Collections.reverse(results);
@@ -67,8 +67,8 @@ public class Controller {
         //TODO powitanie użytkownika z jego imieniem
 
         ObservableList<Result> data = getInitialTableData();
-        c_date.setCellValueFactory(new PropertyValueFactory<Result, String>("date"));
-        c_weight.setCellValueFactory(new PropertyValueFactory<Result, String>("weight"));
+        c_date.setCellValueFactory(new PropertyValueFactory<Result, LocalDate>("date"));
+        c_weight.setCellValueFactory(new PropertyValueFactory<Result, BigDecimal>("weight"));
         //TODO dodanie do tabeli BMI i komentarzy
 
         table_weight.setItems(data);

@@ -1,17 +1,20 @@
 package pl.rengreen.tracker.model;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
 public class Result {
     private Long resultId;
-    private String date;
-    private String weight;
-    private String bmi;
+    private LocalDate date;
+    private BigDecimal weight;
+    private BigDecimal bmi;
     private String comment;
     private User user;
 
     public Result() {
     }
 
-    public Result(Long resultId, String date, String weight, User user) {
+    public Result(Long resultId, LocalDate date, BigDecimal weight, User user) {
         this.resultId = resultId;
         this.date = date;
         this.weight = weight;
@@ -26,28 +29,28 @@ public class Result {
         this.resultId = resultId;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
-    public String getWeight() {
+    public BigDecimal getWeight() {
         return weight;
     }
 
-    public void setWeight(String weight) {
+    public void setWeight(BigDecimal weight) {
         this.weight = weight;
     }
 
-    public String getBmi(){
-        //TODO obliczenie BMI jako BigDecimal i zamiana na String
-        return "0";
+    public BigDecimal getBmi(){
+        //TODO obliczenie BMI
+        return BigDecimal.ZERO;
     }
 
-    public void setBmi(String bmi) {
+    public void setBmi(BigDecimal bmi) {
         this.bmi = bmi;
     }
 
