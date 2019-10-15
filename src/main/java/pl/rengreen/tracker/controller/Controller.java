@@ -28,7 +28,7 @@ public class Controller {
     private TableColumn<Result, BigDecimal> c_weight;
 
     @FXML
-    private TableColumn<Result, String> c_bmi;
+    private TableColumn<Result, BigDecimal> c_bmi;
 
     @FXML
     private TableColumn<Result, String> c_comment;
@@ -69,7 +69,9 @@ public class Controller {
         ObservableList<Result> data = getInitialTableData();
         c_date.setCellValueFactory(new PropertyValueFactory<Result, LocalDate>("date"));
         c_weight.setCellValueFactory(new PropertyValueFactory<Result, BigDecimal>("weight"));
-        //TODO dodanie do tabeli BMI i komentarzy
+        //dodanie do tabeli BMI i komentarzy
+        c_bmi.setCellValueFactory(new PropertyValueFactory<Result, BigDecimal>("bmi"));
+        c_comment.setCellValueFactory(new PropertyValueFactory<Result, String>("comment"));
 
         table_weight.setItems(data);
 
