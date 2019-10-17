@@ -21,10 +21,22 @@
                 <ColumnConstraints hgrow="SOMETIMES" percentWidth="35.0" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="540.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <AnchorPane style="-fx-background-color: #00d2fc;">
+                <AnchorPane style="-fx-background-color: #E4F6F8;">
+                    <children>
+                        <Label fx:id="label_welcome" text="Label" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="15.0">
+                            <font>
+                                <Font name="Constantia" size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <AnchorPane style="-fx-background-color: #E4F6F8;" GridPane.columnIndex="1">
+                </AnchorPane>
+                <AnchorPane style="-fx-background-color: #00d2fc;" GridPane.rowIndex="1">
                     <children>
                         <Label layoutX="26.0" layoutY="32.0" text="Odczyty" AnchorPane.topAnchor="30.0">
                             <font>
@@ -41,7 +53,7 @@
                           </TableView>
                     </children>
                 </AnchorPane>
-                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #4ffbdf;" GridPane.columnIndex="1">
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #4ffbdf;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <children>
                         <Label text="Dodaj odczyt" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="30.0">
                             <font>

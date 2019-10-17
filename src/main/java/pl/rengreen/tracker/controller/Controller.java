@@ -20,6 +20,9 @@ import java.util.List;
 public class Controller {
 
     @FXML
+    private Label label_welcome;
+
+    @FXML
     private TableView<Result> table_weight;
 
     @FXML
@@ -71,7 +74,6 @@ public class Controller {
     }
 
     public void initialize() {
-        //TODO powitanie użytkownika z jego imieniem
         LocalDate today = LocalDate.now();
         date_input.setValue(today);
 
@@ -95,6 +97,9 @@ public class Controller {
         results.add(new Result(16L, today.minusDays(7), new BigDecimal("52.0"), user));
 
         populateTable();
+
+        //powitanie użytkownika z jego imieniem
+        label_welcome.setText("Witaj " + user.getName() + "!");
 
     }
 
