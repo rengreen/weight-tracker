@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
-import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Controller {
@@ -59,7 +59,7 @@ public class Controller {
                 new Result(16L, today.minusDays(7), new BigDecimal("52.0"), user)
         );
 
-        Collections.reverse(results);
+        results.sort(Comparator.comparing(Result::getDate).reversed());
         return FXCollections.observableList(results);
     }
 
