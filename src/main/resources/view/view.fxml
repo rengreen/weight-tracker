@@ -65,14 +65,14 @@
                                         <Font size="18.0" />
                                     </font>
                                 </Label>
-                                <TextField prefHeight="31.0" prefWidth="212.0" GridPane.rowIndex="3" />
+                                <TextField fx:id="tf_weight" prefHeight="31.0" prefWidth="212.0" GridPane.rowIndex="3" />
                                 <Label text="Waga" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
                                 </Label>
-                                <DatePicker GridPane.rowIndex="1" />
-                                <Button mnemonicParsing="false" text="Zatwierdź" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+                                <DatePicker fx:id="date_input" GridPane.rowIndex="1" />
+                                <Button fx:id="btn_submit" mnemonicParsing="false" onAction="#addResult" text="Zatwierdź" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="BOTTOM" />
                             </children>
                         </GridPane>
                     </children>
