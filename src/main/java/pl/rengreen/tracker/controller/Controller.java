@@ -35,7 +35,8 @@ public class Controller {
 
     //TODO dodanie nazw pól do wejścia danych (data i waga) oraz dodanie nazwy buttona wraz metodą zapisującą nowy odczyt
 
-    private ObservableList<Result> getInitialTableData() {
+        public void initialize() {
+        //TODO powitanie użytkownika z jego imieniem
         LocalDate today = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
@@ -60,13 +61,8 @@ public class Controller {
         );
 
         results.sort(Comparator.comparing(Result::getDate).reversed());
-        return FXCollections.observableList(results);
-    }
+        ObservableList<Result> data = FXCollections.observableList(results);
 
-    public void initialize() {
-        //TODO powitanie użytkownika z jego imieniem
-
-        ObservableList<Result> data = getInitialTableData();
         c_date.setCellValueFactory(new PropertyValueFactory<Result, LocalDate>("date"));
         c_weight.setCellValueFactory(new PropertyValueFactory<Result, BigDecimal>("weight"));
         //dodanie do tabeli BMI i komentarzy
