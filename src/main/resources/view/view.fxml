@@ -25,7 +25,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="540.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <AnchorPane style="-fx-background-color: #E4F6F8;">
+                <AnchorPane style="-fx-background-color: #B3E5FC;">
                     <children>
                         <Label fx:id="label_welcome" text="Label" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="15.0">
                             <font>
@@ -34,7 +34,7 @@
                         </Label>
                     </children>
                 </AnchorPane>
-                <AnchorPane style="-fx-background-color: #E4F6F8;" GridPane.columnIndex="1">
+                <AnchorPane style="-fx-background-color: #B3E5FC;" GridPane.columnIndex="1">
                 </AnchorPane>
                 <AnchorPane style="-fx-background-color: #00d2fc;" GridPane.rowIndex="1">
                     <children>
