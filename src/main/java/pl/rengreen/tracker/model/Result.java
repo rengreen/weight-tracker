@@ -5,6 +5,12 @@ import java.math.MathContext;
 import java.time.LocalDate;
 
 public class Result {
+    static final BigDecimal UNDERWEIGHT_VALUE = new BigDecimal(18.5);
+    static final BigDecimal OVERWEIGHT_VALUE = new BigDecimal(25);
+    static final String UNDERWEIGHT_COMMENT = "niedowaga";
+    static final String HEALTHY_WEIGHT_COMMENT = "ok";
+    static final String OVERWEIGHT_COMMENT = "nadwaga";
+
     private Long resultId;
     private LocalDate date;
     private BigDecimal weight;
@@ -59,15 +65,13 @@ public class Result {
 
     public String getComment(){
         //komentarz dotyczący BMI (prawidłowe, za dużo, za mało)
-        BigDecimal underweightValue = new BigDecimal(18.5);
-        BigDecimal overweightValue = new BigDecimal(25);
 
-        if (this.getBmi().compareTo(underweightValue)<0){
-            return "niedowaga";
-        } else if (this.getBmi().compareTo(overweightValue)<0){
-            return "ok";
+        if (this.getBmi().compareTo(UNDERWEIGHT_VALUE)<0){
+            return UNDERWEIGHT_COMMENT;
+        } else if (this.getBmi().compareTo(OVERWEIGHT_VALUE)<0){
+            return HEALTHY_WEIGHT_COMMENT;
         } else {
-            return "nadwaga";
+            return OVERWEIGHT_COMMENT;
         }
     }
 
